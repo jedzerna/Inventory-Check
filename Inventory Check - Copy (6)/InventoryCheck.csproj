@@ -1,0 +1,1255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DD99A94-9C5C-4C50-A65F-D34A45DF1823}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Inventory_Check</RootNamespace>
+    <AssemblyName>InventoryCheck</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>inventory icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>19CF8C4AE0CD7A226ADDA847DB997C8A8FD61874</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>InventoryCheck_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ProgressRing.Forms.Plugin, Version=1.0.6460.16364, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugins.Forms.ProgressRing.0.1.2\lib\portable-net45+wp80+win8+wpa81\ProgressRing.Forms.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="aAccounts.Designer.cs">
+      <DependentUpon>aAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutSystem.Designer.cs">
+      <DependentUpon>AboutSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDiscount.Designer.cs">
+      <DependentUpon>AddDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="additem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="additem.Designer.cs">
+      <DependentUpon>additem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addpoproj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addpoproj.Designer.cs">
+      <DependentUpon>addpoproj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addstocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addstocks.Designer.cs">
+      <DependentUpon>addstocks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addvp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addvp.Designer.cs">
+      <DependentUpon>addvp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="allhistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="allhistory.Designer.cs">
+      <DependentUpon>allhistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="autoupdateitems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="autoupdateitems.Designer.cs">
+      <DependentUpon>autoupdateitems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bodegabreakdown.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bodegabreakdown.Designer.cs">
+      <DependentUpon>bodegabreakdown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="categories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="categories.Designer.cs">
+      <DependentUpon>categories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="category.Designer.cs">
+      <DependentUpon>category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="categoryDeletion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="categoryDeletion.Designer.cs">
+      <DependentUpon>categoryDeletion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="categoryediting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="categoryediting.Designer.cs">
+      <DependentUpon>categoryediting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Categoryupdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categoryupdate.Designer.cs">
+      <DependentUpon>Categoryupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customDR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customDR.Designer.cs">
+      <DependentUpon>customDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dashboard.Designer.cs">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dashboardGLU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dashboardGLU.Designer.cs">
+      <DependentUpon>dashboardGLU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="deductstocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deductstocks.Designer.cs">
+      <DependentUpon>deductstocks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="developer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="developer.Designer.cs">
+      <DependentUpon>developer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DRForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DRForm.Designer.cs">
+      <DependentUpon>DRForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="drhistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="drhistory.Designer.cs">
+      <DependentUpon>drhistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="drsummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="drsummary.Designer.cs">
+      <DependentUpon>drsummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="edititems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="edititems.Designer.cs">
+      <DependentUpon>edititems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GLULogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GLULogin.Designer.cs">
+      <DependentUpon>GLULogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="infoVP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="infoVP.Designer.cs">
+      <DependentUpon>infoVP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="In_supply.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="In_supply.Designer.cs">
+      <DependentUpon>In_supply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="itemadddeducthist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="itemadddeducthist.Designer.cs">
+      <DependentUpon>itemadddeducthist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="itemdetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="itemdetail.Designer.cs">
+      <DependentUpon>itemdetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="itemDetailsMiniView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="itemDetailsMiniView.Designer.cs">
+      <DependentUpon>itemDetailsMiniView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="itemHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="itemHistory.Designer.cs">
+      <DependentUpon>itemHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="itemlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="itemlist.Designer.cs">
+      <DependentUpon>itemlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="itemsleft.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="itemsleft.Designer.cs">
+      <DependentUpon>itemsleft.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LPrinter.cs" />
+    <Compile Include="outlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="outlist.Designer.cs">
+      <DependentUpon>outlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="out_supply.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="out_supply.Designer.cs">
+      <DependentUpon>out_supply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pdfviewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pdfviewer.Designer.cs">
+      <DependentUpon>pdfviewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pocompletionhistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pocompletionhistory.Designer.cs">
+      <DependentUpon>pocompletionhistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="prein.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="prein.Designer.cs">
+      <DependentUpon>prein.cs</DependentUpon>
+    </Compile>
+    <Compile Include="printPreviewVP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="printPreviewVP.Designer.cs">
+      <DependentUpon>printPreviewVP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="printprojsumfront.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="printprojsumfront.Designer.cs">
+      <DependentUpon>printprojsumfront.cs</DependentUpon>
+    </Compile>
+    <Compile Include="printViewDRSum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="printViewDRSum.Designer.cs">
+      <DependentUpon>printViewDRSum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="procode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="procode.Designer.cs">
+      <DependentUpon>procode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="project.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="project.Designer.cs">
+      <DependentUpon>project.cs</DependentUpon>
+    </Compile>
+    <Compile Include="projectsumdata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="projectsumdata.Designer.cs">
+      <DependentUpon>projectsumdata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="projsumdata.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projsumdata.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projsummary.cs">
+      <DependentUpon>projsummary.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="projsummary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projsummary.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="reportsgen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportsgen.Designer.cs">
+      <DependentUpon>reportsgen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reportviewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportviewer.Designer.cs">
+      <DependentUpon>reportviewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salesinvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesinvoice.Designer.cs">
+      <DependentUpon>salesinvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="scan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="scan.Designer.cs">
+      <DependentUpon>scan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="settingsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="settingsPage.Designer.cs">
+      <DependentUpon>settingsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="showproject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="showproject.Designer.cs">
+      <DependentUpon>showproject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="siinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="siinfo.Designer.cs">
+      <DependentUpon>siinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="supplierAddcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supplierAddcs.Designer.cs">
+      <DependentUpon>supplierAddcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="supplierlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supplierlist.Designer.cs">
+      <DependentUpon>supplierlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uForm.Designer.cs">
+      <DependentUpon>uForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VATUPDATE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VATUPDATE.Designer.cs">
+      <DependentUpon>VATUPDATE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewitemandproject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewitemandproject.Designer.cs">
+      <DependentUpon>viewitemandproject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewpics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewpics.Designer.cs">
+      <DependentUpon>viewpics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewpo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewpo.Designer.cs">
+      <DependentUpon>viewpo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewupdateonfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewupdateonfo.Designer.cs">
+      <DependentUpon>viewupdateonfo.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutSystem.resx">
+      <DependentUpon>AboutSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDiscount.resx">
+      <DependentUpon>AddDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="autoupdateitems.resx">
+      <DependentUpon>autoupdateitems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="categories.resx">
+      <DependentUpon>categories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="categoryDeletion.resx">
+      <DependentUpon>categoryDeletion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="categoryediting.resx">
+      <DependentUpon>categoryediting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customDR.resx">
+      <DependentUpon>customDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="developer.resx">
+      <DependentUpon>developer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="infoVP.resx">
+      <DependentUpon>infoVP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="itemDetailsMiniView.resx">
+      <DependentUpon>itemDetailsMiniView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pdfviewer.resx">
+      <DependentUpon>pdfviewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="printPreviewVP.resx">
+      <DependentUpon>printPreviewVP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="printViewDRSum.resx">
+      <DependentUpon>printViewDRSum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="settingsPage.resx">
+      <DependentUpon>settingsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supplierAddcs.resx">
+      <DependentUpon>supplierAddcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supplierlist.resx">
+      <DependentUpon>supplierlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VATUPDATE.resx">
+      <DependentUpon>VATUPDATE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewupdateonfo.resx">
+      <DependentUpon>viewupdateonfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="bin\Debug\AppUpdator\AppUpdator.exe.config" />
+    <None Include="bin\Debug\InventoryCheck.Vsn" />
+    <None Include="InventoryCheck_TemporaryKey.pfx" />
+    <None Include="projsumdata.xsc">
+      <DependentUpon>projsumdata.xsd</DependentUpon>
+    </None>
+    <None Include="projsumdata.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projsumdata.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="projsumdata.xss">
+      <DependentUpon>projsumdata.xsd</DependentUpon>
+    </None>
+    <None Include="projsummary.xsc">
+      <DependentUpon>projsummary.xsd</DependentUpon>
+    </None>
+    <None Include="projsummary.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projsummary.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="projsummary.xss">
+      <DependentUpon>projsummary.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\exitfinal2.png" />
+    <None Include="Resources\exitfinal21.png" />
+    <None Include="Resources\exitfinal.png" />
+    <None Include="Resources\macosmini1.png" />
+    <None Include="Resources\macosmini.png" />
+    <None Include="Resources\macosmini3.png" />
+    <None Include="Resources\macosmini4.png" />
+    <None Include="Resources\macosmini5.png" />
+    <None Include="Resources\macosmini6.png" />
+    <None Include="Resources\icons8_settings_384px.png" />
+    <None Include="Resources\icons8_account_384px.png" />
+    <None Include="Resources\icons8_activity_history_384px.png" />
+    <None Include="Resources\icons8_order_history_192px.png" />
+    <None Include="Resources\dashicon1.png" />
+    <None Include="Resources\icons8_order_history_24px_1.png" />
+    <None Include="Resources\icons8_security_user_male_24px.png" />
+    <None Include="Resources\icons8_grand_master_key_24px.png" />
+    <None Include="Resources\icons8_warning_shield_24px.png" />
+    <None Include="Resources\icons8_help_24px.png" />
+    <None Include="Resources\icons8_search_50px.png" />
+    <None Include="Resources\icons8_search_50px1.png" />
+    <None Include="Resources\icons8_synchronize_64px.png" />
+    <None Include="Resources\suppliericon.png" />
+    <None Include="Resources\icons8_supplier_24px_1.png" />
+    <None Include="Resources\icons8_supplier_24px_2.png" />
+    <None Include="Resources\icons8_print_26px_1.png" />
+    <None Include="Resources\icons8_database_backup_48px.png" />
+    <None Include="Resources\icons8_database_backup_24px.png" />
+    <None Include="Resources\icons8_database_export_48px_3.png" />
+    <None Include="Resources\icons8_calendar_52px_1.png" />
+    <None Include="Resources\icons8_calendar_52px_2.png" />
+    <None Include="Resources\icons8_calendar_96px.png" />
+    <None Include="Resources\icons8_refresh_24px.png" />
+    <None Include="Resources\icons8_Delete_384px2.png" />
+    <None Include="Resources\icons8_trash_48px.png" />
+    <None Include="Resources\icons8_history_folder_48px.png" />
+    <None Include="Resources\icons8_edit_24px.png" />
+    <None Include="Resources\icons8_edit_24px1.png" />
+    <None Include="Resources\icons8_edit_24px_1.png" />
+    <None Include="Resources\icons8_edit_24px2.png" />
+    <None Include="Resources\icons8_edit_48px.png" />
+    <None Include="Resources\icons8_add_graph_report_48px1.png" />
+    <None Include="Resources\icons8_attach_64px.png" />
+    <None Include="Resources\icons8_order_history_48px.png" />
+    <None Include="Resources\icons8_edit_24px_11.png" />
+    <None Include="Resources\icons8_done_52px_1.png" />
+    <None Include="Resources\icons8_cancel_48px.png" />
+    <None Include="Resources\z11.png" />
+    <None Include="Resources\z24.png" />
+    <None Include="Resources\icons8_attach_64px1.png" />
+    <None Include="Resources\icons8_order_history_48px1.png" />
+    <None Include="Resources\icons8_add_graph_report_48px.png" />
+    <None Include="Resources\icons8_ok_48px_1.png" />
+    <None Include="Resources\wrongiconm.png" />
+    <None Include="Resources\icons8_edit_24px3.png" />
+    <None Include="Resources\check.png" />
+    <None Include="Resources\icons8_ticket_purchase_480px.png" />
+    <None Include="Resources\icons8_shipped_480px.png" />
+    <None Include="Resources\icons8_peso_symbol_48px_1.png" />
+    <None Include="Resources\Untitled-12.png" />
+    <None Include="Resources\inventoryic.png" />
+    <None Include="Resources\icons8_Plus_+_48px.png" />
+    <None Include="Resources\icons8_combo_chart_24px.png" />
+    <None Include="Resources\icons8_combo_chart_48px.png" />
+    <None Include="Resources\icons8_procurement_48px.png" />
+    <None Include="Resources\icons8_delivery_48px.png" />
+    <None Include="Resources\icons8_similar_items_48px.png" />
+    <None Include="Resources\icons8_report_file_48px.png" />
+    <None Include="Resources\icons8_supplier_48px.png" />
+    <None Include="Resources\icons8_edit_account_48px.png" />
+    <Content Include="bin\Debug\AppUpdator\AppUpdator.exe" />
+    <Content Include="bin\Debug\AppUpdator\AppUpdator.pdb" />
+    <Content Include="bin\Debug\AppUpdator\Guna.UI2.dll" />
+    <None Include="Resources\icons8_eye_24px.png" />
+    <None Include="Resources\giphy.gif" />
+    <None Include="Resources\giphy %281%29.gif" />
+    <None Include="Resources\20220714_174300.gif" />
+    <None Include="Resources\icons8_username_48px_1.png" />
+    <None Include="Resources\icons8_password_48px.png" />
+    <None Include="Resources\icons8_warning_shield_48px.png" />
+    <None Include="Resources\icons8_done_52px_11.png" />
+    <None Include="Resources\wong.png" />
+    <None Include="Resources\icons8_empty_trash_24px.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="aAccounts.resx">
+      <DependentUpon>aAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="additem.resx">
+      <DependentUpon>additem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addpoproj.resx">
+      <DependentUpon>addpoproj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addstocks.resx">
+      <DependentUpon>addstocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addvp.resx">
+      <DependentUpon>addvp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="allhistory.resx">
+      <DependentUpon>allhistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bodegabreakdown.resx">
+      <DependentUpon>bodegabreakdown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="category.resx">
+      <DependentUpon>category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categoryupdate.resx">
+      <DependentUpon>Categoryupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashboard.resx">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashboardGLU.resx">
+      <DependentUpon>dashboardGLU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deductstocks.resx">
+      <DependentUpon>deductstocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DRForm.resx">
+      <DependentUpon>DRForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="drhistory.resx">
+      <DependentUpon>drhistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="drsummary.resx">
+      <DependentUpon>drsummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="edititems.resx">
+      <DependentUpon>edititems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GLULogin.resx">
+      <DependentUpon>GLULogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="In_supply.resx">
+      <DependentUpon>In_supply.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="itemadddeducthist.resx">
+      <DependentUpon>itemadddeducthist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="itemdetail.resx">
+      <DependentUpon>itemdetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="itemHistory.resx">
+      <DependentUpon>itemHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="itemlist.resx">
+      <DependentUpon>itemlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="itemsleft.resx">
+      <DependentUpon>itemsleft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="outlist.resx">
+      <DependentUpon>outlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="out_supply.resx">
+      <DependentUpon>out_supply.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pocompletionhistory.resx">
+      <DependentUpon>pocompletionhistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="prein.resx">
+      <DependentUpon>prein.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="printprojsumfront.resx">
+      <DependentUpon>printprojsumfront.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="procode.resx">
+      <DependentUpon>procode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="project.resx">
+      <DependentUpon>project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="projectsumdata.resx">
+      <DependentUpon>projectsumdata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportsgen.resx">
+      <DependentUpon>reportsgen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportviewer.resx">
+      <DependentUpon>reportviewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salesinvoice.resx">
+      <DependentUpon>salesinvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="scan.resx">
+      <DependentUpon>scan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="showproject.resx">
+      <DependentUpon>showproject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="siinfo.resx">
+      <DependentUpon>siinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uForm.resx">
+      <DependentUpon>uForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewitemandproject.resx">
+      <DependentUpon>viewitemandproject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewpics.resx">
+      <DependentUpon>viewpics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewpo.resx">
+      <DependentUpon>viewpo.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_send_to_printer_192px.png" />
+    <None Include="Resources\icons8_minus_384px.png" />
+    <None Include="Resources\icons8_add_384px.png" />
+    <None Include="Resources\icons8_Save_Archive_384px2.png" />
+    <None Include="Resources\icons8_ok_384px1.png" />
+    <None Include="Resources\icons8_add_file_192px.png" />
+    <None Include="Resources\icons8_edit_account_192px.png" />
+    <None Include="Resources\icons8_supplier_192px_2.png" />
+    <None Include="Resources\icons8_report_file_192px.png" />
+    <None Include="Resources\icons8_combo_chart_192px.png" />
+    <None Include="Resources\icons8_procurement_192px.png" />
+    <None Include="Resources\icons8_delivery_192px.png" />
+    <None Include="Resources\icons8_similar_items_192px.png" />
+    <None Include="Resources\icons8_edit_chat_history_384px1.png" />
+    <None Include="Resources\icons8_Delete_384px1.png" />
+    <None Include="Resources\icons8_Save_Archive_384px1.png" />
+    <None Include="Resources\icons8_unavailable_384px1.png" />
+    <None Include="Resources\icons8_search_folder_384px1.png" />
+    <None Include="Resources\reportsicon1.png" />
+    <None Include="Resources\return.png" />
+    <None Include="Resources\icons8_ok_384px.png" />
+    <None Include="Resources\icons8_filled_circle_480px.png" />
+    <None Include="Resources\icons8_Delete_384px.png" />
+    <None Include="Resources\icons8_Save_Archive_384px.png" />
+    <None Include="Resources\icons8_edit_chat_history_384px.png" />
+    <None Include="Resources\icons8_unavailable_384px.png" />
+    <None Include="Resources\icons8_search_folder_384px.png" />
+    <None Include="Resources\personal-profile-document-with-photo-id-my-account-icon-isolated-flat-cartoon_101884-748.jpg" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\icons8_add_graph_report_144px_2.png" />
+    <None Include="Resources\dashlogo.png" />
+    <None Include="Resources\icons8_pie_chart_report_240px.png" />
+    <None Include="Resources\icons8_upload_to_ftp_480px_1.png" />
+    <None Include="Resources\dashicon.png" />
+    <None Include="Resources\multiline2.png" />
+    <None Include="Resources\multiline1.png" />
+    <None Include="Resources\reports logo.png" />
+    <None Include="Resources\reportsicon.png" />
+    <None Include="Resources\ddddd1.png" />
+    <None Include="Resources\ddddd.png" />
+    <None Include="Resources\qq.png" />
+    <None Include="Resources\z7.png" />
+    <None Include="Resources\z6.png" />
+    <None Include="Resources\icons8_pie_chart_642.png" />
+    <None Include="Resources\icons8_pie_chart_641.png" />
+    <None Include="Resources\z32.png" />
+    <None Include="Resources\z5.png" />
+    <None Include="Resources\z4.png" />
+    <None Include="Resources\z31.png" />
+    <None Include="Resources\z3.png" />
+    <None Include="Resources\z23.png" />
+    <None Include="Resources\z22.png" />
+    <None Include="Resources\z21.png" />
+    <None Include="Resources\z2.png" />
+    <None Include="Resources\z1.png" />
+    <None Include="Resources\icons8_pie_chart_64.png" />
+    <None Include="Resources\icons8_open_box_64.png" />
+    <None Include="Resources\icons8_shipped_64.png" />
+    <None Include="Resources\icons8_shopping_cart_64.png" />
+    <None Include="Resources\icons8_registration_32.png" />
+    <None Include="Resources\icons8_add_shopping_cart_64.png" />
+    <None Include="Resources\NicePng_product-icon-png_3048415.png" />
+    <None Include="Resources\kisspng-chart-computer-icons-analysis-research-statistics-5ad795ad8aa1b9.10520284152407799756782.jpg" />
+    <None Include="Resources\kisspng-chart-computer-icons-analysis-research-statistics-5ad795ad8aa1b9.10520284152407799756781.jpg" />
+    <None Include="Resources\kisspng-chart-computer-icons-analysis-research-statistics-5ad795ad8aa1b9.1052028415240779975678.jpg" />
+    <None Include="Resources\logobr.png" />
+    <None Include="Resources\logoattachments.png" />
+    <None Include="Resources\logodr.png" />
+    <None Include="Resources\logoprojects.png" />
+    <None Include="Resources\itemsandprojects2.png" />
+    <None Include="Resources\itemsandprojects.png" />
+    <None Include="Resources\www.png" />
+    <None Include="Resources\itembutton2.png" />
+    <None Include="Resources\iconpro.png" />
+    <None Include="Resources\select.png" />
+    <None Include="Resources\datagridprocode1.png" />
+    <None Include="Resources\datagridprocode.png" />
+    <None Include="Resources\itemaddlogo1.png" />
+    <None Include="Resources\itemaddlogo.png" />
+    <None Include="Resources\pobutton.png" />
+    <None Include="Resources\pp5.png" />
+    <None Include="Resources\pp4.png" />
+    <None Include="Resources\pp3.png" />
+    <None Include="Resources\pp2.png" />
+    <None Include="Resources\pp1.png" />
+    <None Include="Resources\pp.png" />
+    <None Include="Resources\Untitled-11.png" />
+    <None Include="Resources\icon.png" />
+    <None Include="Resources\NicePng_login-icon-png_1388174.png" />
+    <None Include="Resources\option.png" />
+    <None Include="Resources\GLULogo2.png" />
+    <None Include="Resources\GLULogo.png" />
+    <None Include="Resources\2.jpg" />
+    <None Include="Resources\1.jpg" />
+    <Content Include="inventory icon.ico" />
+    <Content Include="inventoryic.ico" />
+    <Content Include="inventoryicon1.ico" />
+    <None Include="Resources\0001.jpg" />
+    <Content Include="Resources\2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\dashboard.png" />
+    <None Include="Resources\dashboard1.png" />
+    <None Include="Resources\scanbuttton1.png" />
+    <None Include="Resources\scanbuttton.png" />
+    <None Include="Resources\datascan2.png" />
+    <None Include="Resources\datascan.png" />
+    <None Include="Resources\ScanImg.jpg" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\datagridhistory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\21.jpg" />
+    <Content Include="Resources\3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Un.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eweqw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelbutton1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelbutton2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelbutton3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\savebutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\datagrid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\datagrid1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\purchaselogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\itemlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selectedlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lblbackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lblbackground1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-3 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-3 11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-3 12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drlabel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drlabel 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\itemslabel 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\itemslabel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\itemslabel 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportslabel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportslabel 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingslabel 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingslabel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\datagrid2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\datagrid3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-computer-icons-action-item-icon-design-others-text-rectangle-computer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-computer-icons-action-item-icon-design-others-text-rectangle-computer1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NicePng_power-point-icon-png_6739934.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NicePng_power-point-icon-png_67399341.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletebutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\completebutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\donebutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add 2.png" />
+    <None Include="Resources\buttonhistory.png" />
+    <None Include="Resources\buttonattach.png" />
+    <None Include="Resources\buttonbrowse.png" />
+    <None Include="Resources\buttonexport.png" />
+    <None Include="Resources\buttonexport2.png" />
+    <None Include="Resources\7.png" />
+    <None Include="Resources\8.png" />
+    <None Include="Resources\9.png" />
+    <None Include="Resources\buttonaccount1.png" />
+    <None Include="Resources\buttonaccount.png" />
+    <None Include="Resources\accountlogo.png" />
+    <None Include="Resources\buttondr.png" />
+    <None Include="Resources\buttondirect.png" />
+    <None Include="Resources\buttonitemleft.png" />
+    <None Include="Resources\additem.png" />
+    <None Include="Resources\addqty.png" />
+    <None Include="Resources\addqty2.png" />
+    <None Include="Resources\addqty3.png" />
+    <None Include="Resources\buttonprojects.png" />
+    <None Include="Resources\buttonshowdr.png" />
+    <None Include="Resources\buttontransfertodr.png" />
+    <None Include="Resources\aaaa.png" />
+    <Content Include="Resources\completed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\historyu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\datagrid4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\datagrid5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\itemdetails.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\form.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WIA">
+      <Guid>{94A0E92D-43C0-494E-AC29-FD45948A5221}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties XamarinHotReloadXFormsNugetUpgradeInfoBarInventoryCheckHideInfoBar="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
